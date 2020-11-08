@@ -24,7 +24,6 @@ namespace Addressbok_v2
         }
         static void Main(string[] args)
         {
-            //C:\\Users\\oskar\\adressbok.txt
             Console.WriteLine("Välkommen till Kontaktboken!");
             string command;
             do
@@ -48,7 +47,7 @@ namespace Addressbok_v2
             }
             while (command != "4");
         }
-        //https://stackoverflow.com/questions/7569904/easiest-way-to-read-from-and-write-to-files code source
+        //https://stackoverflow.com/questions/7569904/easiest-way-to-read-from-and-write-to-files code source for 
         static void ContactBookMenu()
         {
             Console.WriteLine("**********Menyval**********");
@@ -58,6 +57,8 @@ namespace Addressbok_v2
             Console.WriteLine("* 4. Avsluta Kontaktboken *");
             Console.WriteLine("***************************");
         }
+        //Source code for reading and writing text file https://stackoverflow.com/questions/9960064/append-in-a-text-file-in-c-sharp
+        //Function to add contact
         static void Writer()
         {
             string path = @"C:\\Users\\oskar\\adressbok.txt";
@@ -77,23 +78,25 @@ namespace Addressbok_v2
             List<ContactBook> book = new List<ContactBook>();
             book.Add(new ContactBook(addNameToTxt, addAdressToTxt, addPhoneToTxt, addEmailToTxt));
         }
+        //Function to remove contact
         static void Remover()
         {
             string path = @"C:\\Users\\oskar\\adressbok.txt";
             List<string> oldContacts = File.ReadAllLines(path).ToList();
             Console.Write("Vilket nummer vill du ta bort: ");
             int num = int.Parse(Console.ReadLine());
-            oldContacts.RemoveAt(num);
+            oldContacts.RemoveAt(num - 1);
             //Found help from https://www.c-sharpcorner.com/blogs/how-to-remove-a-line-from-a-text-file-at-specific-location-in-c-sharp1
             File.WriteAllLines((path), oldContacts.ToArray());
         }
+        //Function to view all contacts
         static void Reader()
         {
             string path = @"C:\\Users\\oskar\\adressbok.txt";
             List<string> oldContacts = File.ReadAllLines(path).ToList();
             for (int i = 0; i < oldContacts.Count; i++)
             {
-                Console.WriteLine($"{i}: {oldContacts[i]}");
+                Console.WriteLine($"{i + 1}: {oldContacts[i]}");
             }
         }
     }
