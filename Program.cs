@@ -47,7 +47,6 @@ namespace Addressbok_v2
             }
             while (command != "4");
         }
-        //https://stackoverflow.com/questions/7569904/easiest-way-to-read-from-and-write-to-files code source for 
         static void ContactBookMenu()
         {
             Console.WriteLine("**********Menyval**********");
