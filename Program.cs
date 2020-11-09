@@ -58,7 +58,7 @@ namespace Addressbok_v2
             Console.WriteLine("***************************");
         }
         //Source code for reading and writing text file https://stackoverflow.com/questions/9960064/append-in-a-text-file-in-c-sharp
-        //Function to add contact
+        //Methode to add contact
         static void Writer()
         {
             string path = @"C:\\Users\\oskar\\adressbok.txt";
@@ -78,7 +78,7 @@ namespace Addressbok_v2
             List<ContactBook> book = new List<ContactBook>();
             book.Add(new ContactBook(addNameToTxt, addAdressToTxt, addPhoneToTxt, addEmailToTxt));
         }
-        //Function to remove contact
+        //Methode to remove contact
         static void Remover()
         {
             string path = @"C:\\Users\\oskar\\adressbok.txt";
@@ -89,7 +89,7 @@ namespace Addressbok_v2
             //Found help from https://www.c-sharpcorner.com/blogs/how-to-remove-a-line-from-a-text-file-at-specific-location-in-c-sharp1
             File.WriteAllLines((path), oldContacts.ToArray());
         }
-        //Function to view all contacts
+        //Methode to view all contacts
         static void Reader()
         {
             string path = @"C:\\Users\\oskar\\adressbok.txt";
